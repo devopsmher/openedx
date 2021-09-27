@@ -7,7 +7,7 @@
 version: 2
 
 # Templates
-defaults: &defaults # We use the machine executor, i.e. a VM, not a container
+defaults: &defaults # We use the machine executor, i.e. a VM, not a container.
   machine:
     # Cache docker layers so that we strongly speed up this job execution
     # This cache will be available to future jobs (although because jobs run
