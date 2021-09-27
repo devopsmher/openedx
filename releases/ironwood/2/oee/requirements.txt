@@ -1,0 +1,21 @@
+# Open edX extended: dependencies
+
+# ==== core ====
+fonzie==0.2.1
+
+# ==== xblocks ====
+configurable_lti_consumer-xblock==1.2.3
+
+# pin ora2 to a version that works with the filesystem
+git+https://github.com/edx/edx-ora2.git@2.2.7#egg=ora2==2.2.7
+
+# ==== third-party apps ====
+celery-redis-sentinel==0.3.0
+# django-django-redis-sentinel-redux is not compatible with
+# django-redis > 4.5.0
+django-redis==4.5.0
+django-redis-sentinel-redux==0.2.0
+django-redis-sessions==0.6.1
+raven==6.9.0
+redis==2.10.6
+gunicorn==19.9.0

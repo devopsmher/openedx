@@ -1,0 +1,41 @@
+# FUN dependencies
+--extra-index-url https://pypi.fury.io/openfun/
+
+# ==== core ====
+edx-gea==0.2.0
+fonzie==0.2.0
+fun-apps==5.11.0
+
+# ==== xblocks ====
+configurable_lti_consumer-xblock==1.3.0
+glowbl-xblock==0.2.1
+ipython-xblock==0.2.0
+libcast-xblock==0.5.0
+password-container-xblock==0.3.0
+proctoru-xblock==1.2.0
+xblock-proctor-exam==1.0.0
+xblock-utils2==0.3.0
+
+# ==== third-party apps ====
+celery-redis-sentinel==0.3.0
+# django-classy-tags 2.0.0 dropped support for python 2.x
+django-classy-tags==0.8.0
+# django-django-redis-sentinel-redux is not compatible with
+# django-redis > 4.5.0
+django-redis==4.5.0
+django-redis-sentinel-redux==0.2.0
+django-redis-sessions==0.6.1
+# Add Gelf support for logging
+djehouty==0.1.5
+raven==6.9.0
+redis==2.10.6
+# Upgrade requests and urllib3 to prevent SSL certificate validation failure
+# (we should use pyOpenSSL instead of the local openssl library). For
+# reference, see:
+# https://urllib3.readthedocs.io/en/latest/user-guide.html#ssl-py2
+requests==2.22.0
+urllib3[secure]==1.25.7
+
+# The version of gunicorn shipped with Open edX is too old. We want to use a
+# recent version to be able to configure threads with gthread worker class.
+gunicorn==19.9.0
