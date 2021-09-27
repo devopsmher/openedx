@@ -208,28 +208,28 @@ jobs:
             source $(bin/ci activate_path)
             make build
 
-      # Tag images with our DockerHub namespace (fundocker/), and list images to
+      # Tag images with our DockerHub namespace (devopsmher/), and list images to
       # check that they have been properly tagged.
       - run:
           name: Tag production image
           command: |
             source $(bin/ci activate_path)
-            docker tag edxapp:${EDX_RELEASE}-${FLAVOR} fundocker/edxapp:${CIRCLE_TAG}
-            docker images fundocker/edxapp:${CIRCLE_TAG}
+            docker tag edxapp:${EDX_RELEASE}-${FLAVOR} devopsmher/edxapp:${CIRCLE_TAG}
+            docker images devopsmher/edxapp:${CIRCLE_TAG}
 
       - run:
           name: Tag nginx production images
           command: |
             source $(bin/ci activate_path)
-            docker tag edxapp-nginx:${EDX_RELEASE}-${FLAVOR} fundocker/edxapp-nginx:${CIRCLE_TAG}
-            docker images fundocker/edxapp-nginx:${CIRCLE_TAG}
+            docker tag edxapp-nginx:${EDX_RELEASE}-${FLAVOR} devopsmher/edxapp-nginx:${CIRCLE_TAG}
+            docker images devopsmher/edxapp-nginx:${CIRCLE_TAG}
 
       # Publish the production images to DockerHub
       - run:
           name: Publish production image
           command: |
-            docker push fundocker/edxapp:${CIRCLE_TAG}
-            docker push fundocker/edxapp-nginx:${CIRCLE_TAG}
+            docker push devopsmher/edxapp:${CIRCLE_TAG}
+            docker push devopsmher/edxapp-nginx:${CIRCLE_TAG}
 
 # CI workflows
 workflows:
